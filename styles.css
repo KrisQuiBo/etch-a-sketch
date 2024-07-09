@@ -1,0 +1,34 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+}
+
+.main {
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 960px;
+    height: 960px;
+}
+.row {
+  display: flex;
+}
+.pixel {
+   height: 60px;
+   width: 60px;
+   background-color: aliceblue;
+}
+.pixel:hover {
+  background-color: tomato;
+}
