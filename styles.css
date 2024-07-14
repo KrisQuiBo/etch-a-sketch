@@ -15,11 +15,13 @@ body {
   min-height: 100vh;
 }
 
-.main {
+.main, .container {
     margin: 0 auto;
     border: 1px solid black;
-    width: 960px;
-    height: 960px;
+    width: 962px;
+    height: 962px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .row {
   display: flex;
@@ -29,6 +31,6 @@ body {
    width: 60px;
    background-color: aliceblue;
 }
-.pixel:hover {
+/* .pixel:hover {
   background-color: tomato;
-}
+} */
