@@ -1,19 +1,40 @@
 const containerDiv = document.querySelector(".container");
-let numberSquares = 256;
-let div;
+const removeBtn = document.querySelector(".remove");
+let pixelDiv;
+let root = document.querySelector(":root")
 
-for(let i = 0; i < numberSquares; i++) {
-div = document.createElement("div");
-containerDiv.appendChild(div);
-if(div) {
-    div.classList.add('pixel');
-}
-}
+document.addEventListener("DOMContentLoaded", () => {
+  
+    let squares = prompt("how many squares across?")
 
-containerDiv.addEventListener('mouseover', function(e) { 
-    console.log(e.target)
-    e.target.style.backgroundColor = 'pink';
-})
-
-
-
+    function makeGrid(squares) {
+        let squareHeight = 960/squares;
+        let squareWidth = 960/squares;
+        for(let i = 0; i < squares * squares; i++) {
+            pixelDiv = document.createElement("div");
+            containerDiv.appendChild(pixelDiv);
+                if(pixelDiv) {
+                    pixelDiv.classList.add('pixel');
+                    }
+                    pixelDiv.style.setProperty('width', squareWidth + 'px');
+                    pixelDiv.style.setProperty('height', squareHeight + 'px');
+        }   
+    }
+    makeGrid(squares);
+    containerDiv.addEventListener('mouseover', function(e) { 
+        e.target.style.backgroundColor = 'pink';
+    })
+    function removeGrid() {
+        for(let i=0; i<squares * squares; i++) {
+            containerDiv.firstElementChild.remove();
+            containerDiv.style.backgroundColor = 'white';
+        }
+    }
+    removeBtn.addEventListener('click', function(e) {
+    alert('clear the board and start over?')
+        removeGrid()
+        squares = prompt('how many?');
+        makeGrid(squares);
+    });
+  
+});

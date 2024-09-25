@@ -1,3 +1,8 @@
+:root {
+  --width: 60px;
+  --height: 60px;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -14,8 +19,18 @@ ul {
 body {
   min-height: 100vh;
 }
-
-.main, .container {
+.buttons {
+  display: block;
+  text-align: center;
+}
+button.howMany, button.remove {
+    border: none;
+    background-color: pink;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px auto; 
+}
+.container {
     margin: 0 auto;
     border: 1px solid black;
     width: 962px;
@@ -23,12 +38,12 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-.row {
-  display: flex;
-}
+
 .pixel {
-   height: 60px;
-   width: 60px;
+  /* --height: 0px;
+  --width: 0px; */
+   height: var(--height);
+   width: var(--width);
    background-color: aliceblue;
 }
 /* .pixel:hover {
